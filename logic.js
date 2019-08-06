@@ -203,10 +203,12 @@ startGame();
 
 // Then initiate the function for capturing key clicks.
 document.onkeyup = function(event) {
-  // Converts all key clicks to lowercase letters.
-  var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
-  // Runs the code to check for correctness.
-  checkLetters(letterGuessed);
-  // Runs the code after each round is done.
-  roundComplete(chosenWord);
+  if(event.keyCode != 123){
+    // Converts all key clicks to lowercase letters.
+    var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+    // Runs the code to check for correctness.
+    checkLetters(letterGuessed);
+    // Runs the code after each round is done.
+    roundComplete(chosenWord);
+  }
 };
