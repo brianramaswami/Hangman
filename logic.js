@@ -157,7 +157,7 @@ function checkLetters(letter) {
 
 // roundComplete() function
 // Here we will have all of the code that needs to be run after each guess is made
-function roundComplete() {
+function roundComplete(chosenWord) {
 
   // First, log an initial status update in the console telling us how many wins, losses, and guesses are left.
   console.log("WinCount: " + winCounter + " | LossCount: " + lossCounter + " | NumGuesses: " + numGuesses);
@@ -185,7 +185,7 @@ function roundComplete() {
     // Add to the loss counter.
     lossCounter++;
     // Give the user an alert.
-    alert("You lose");
+    alert("You lose, the correct word is: "+ chosenWord );
 
     // Update the loss counter in the HTML.
     document.getElementById("loss-counter").innerHTML = lossCounter;
@@ -208,5 +208,5 @@ document.onkeyup = function(event) {
   // Runs the code to check for correctness.
   checkLetters(letterGuessed);
   // Runs the code after each round is done.
-  roundComplete();
+  roundComplete(chosenWord);
 };
